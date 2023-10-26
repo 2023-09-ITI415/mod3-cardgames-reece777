@@ -247,7 +247,53 @@ public class Prospector : MonoBehaviour {
 
 				break;
 		}
+
+		// After the card is clicked, check if the game is over
+		CheckForGameOver();
 	}
+
+	// Check to see whether the game is over or not
+	void CheckForGameOver()
+	{
+		// If the tableau is empty, the game is over
+		if (tableau.Count == 0)
+		{
+			// Call GameOver() with a win
+			GameOver(true);
+		}
+		else if (drawPile.Count == 0)
+		{
+			// Check for remaining valid plays
+			foreach (CardProspector cd in tableau)
+			{
+				if (AdjacentRank(cd, target))
+				{
+					// If there is a valid play, the game's not over
+					return;
+				}
+			}
+			// Since there are no valid plays, the game is over
+			// Call GameOver with a loss
+			GameOver(false);
+		}
+	}
+
+	// Called when the game is over. Simple for now, but expandable
+	void GameOver(bool won)
+	{
+		if (won)
+		{
+			print("Game Over. You won! :)");
+		}
+		else
+		{
+			print("Game Over. You Lost. :(");
+		}
+		// Reload the scene, resetting the game
+		SceneManager.LoadScene("__Prospector");
+	}
+
+
 
 	// Return true if the two cards are adjacent in rank (A & K wrap around)
 	public bool AdjacentRank(CardProspector c0, CardProspector c1)
