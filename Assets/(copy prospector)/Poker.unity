@@ -296,9 +296,9 @@ GameObject:
   - component: {fileID: 827460519}
   - component: {fileID: 827460509}
   - component: {fileID: 827460518}
-  - component: {fileID: 827460522}
   - component: {fileID: 827460523}
   - component: {fileID: 827460521}
+  - component: {fileID: 827460522}
   m_Layer: 0
   m_Name: _MainCamera
   m_TagString: MainCamera
@@ -424,9 +424,9 @@ MonoBehaviour:
   fsPosMid2: {x: 0.4, y: 1}
   fsPosEnd: {x: 0.5, y: 0.95}
   reloadDelay: 2
-  gameOverText: {fileID: 0}
-  roundResultText: {fileID: 0}
-  highScoreText: {fileID: 0}
+  gameOverText: {fileID: 598282854}
+  roundResultText: {fileID: 48708092}
+  highScoreText: {fileID: 927737256}
   deck: {fileID: 0}
   layout: {fileID: 0}
   drawPile: []
